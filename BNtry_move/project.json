@@ -1,0 +1,43 @@
+{
+  "assets": [],
+  "build": {
+    "build_number": 0,
+    "build_time": 0,
+    "release": false
+  },
+  "encryptLevel": 0,
+  "useFeatures": [],
+  "launchConfig": {
+    "displaySplash": true,
+    "hideLogs": false,
+    "splashText": "Powered by Auto.js Pro",
+    "stableMode": false
+  },
+  "main": "main.js",
+  "name": "AutoJs-悬浮按钮模块",
+  "optimization": {
+    "removeOpenCv": false,
+    "unusedResources": false
+  },
+  "packageName": "com.example.se7en_float_button",
+  "permissionConfig": {
+    "requestListOnStartup": [
+      "android.permission.WRITE_EXTERNAL_STORAGE"
+    ]
+  },
+  "publish": {
+    "category": "实用工具",
+    "details": "bug反馈:531310591@qq.com",
+    "maxAutoJsVersion": -1,
+    "maxProVersion": 8089999,
+    "minAutoJsVersion": -1,
+    "minProVersion": 8080000,
+    "minSdkVersion": 4,
+    "permissions": [],
+    "summary": "AutoJs-悬浮按钮模块",
+    "tags": []
+  },
+  "scripts": {},
+  "versionCode": 2001,
+  "versionName": "2.0.0-1"
+}
