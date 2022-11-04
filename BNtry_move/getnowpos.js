@@ -1,6 +1,3 @@
-////获取指定坐标的ARGB值
-
-
 TrafficStats = android.net.TrafficStats;
 importClass(android.graphics.Paint);
 Canvas=android.graphics.Canvas;
@@ -17,14 +14,8 @@ function textpaint(str){
     canvas.drawARGB(255,0,255,0);
     var paint = new Paint();
     //圆盘背景
-    paint.setARGB(255,255,255,0);//白色画笔
-    //paint.setStyle(Paint.Style.FILL);//空心样式  
-    //paint.setFilterBitmap(true);//抗锯齿
-    paint.setFakeBoldText(true);//加粗
-    //paint.setHinting(16);//字体微调
     paint.setTextSize(24);
     for(i=0;i<str.length;i++){
-        //paint.setARGB(255,random(0,255),255,0);//
         canvas.drawText(str[i],0,(i+1)*25,paint);
     }
    
@@ -82,7 +73,7 @@ window.img.setOnTouchListener(function(view, event) {
 
             return true;
         case event.ACTION_UP:
-            //手指弹起时如果偏移很小则判断为点击
+            //加个手指点击的触碰判断，轻微点击也再计算一次位置
             if (Math.abs(event.getRawY() - y) < 5 && Math.abs(event.getRawX() - x) < 5) {
                 threads.start(function() {
                     onClick();
@@ -107,18 +98,19 @@ threads.start(function() {
         while ($images.getScreenCaptureOptions()) { if (falgUpdata) {
             str_x = window.getX();
             str_y = window.getY() + 80;
-            str_image = images.captureScreen();
-            str_ARGB = images.pixel(str_image, str_x, str_y+100);
-            str =   " -------实时坐标-------" +
-                    "\n坐标X：" + String(str_x) +
-                    "\n坐标Y：" + String(str_y)
-                  //  "\nARGB：" + String(str_ARGB);
-            tu=textpaint(str);
-            ui.run(function() {
-                window.img.setImageBitmap(tu);
-            });
-            sleep(100);
-            //log($images.getScreenCaptureOptions())
+            // str_image = images.captureScreen();
+            // str_ARGB = images.pixel(str_image, str_x, str_y+100);
+            // str =   " -------实时坐标-------" +
+            //         "\n坐标X：" + String(str_x) +
+            //         "\n坐标Y：" + String(str_y)
+            //       //  "\nARGB：" + String(str_ARGB);
+            // tu=textpaint(str);
+            // ui.run(function() {
+            //     window.img.setImageBitmap(tu);
+            // });
+            // sleep(100);
+            // log($images.getScreenCaptureOptions())
+            // 屏蔽掉那个贼丑的位置浮窗
         }}
     }
 });
